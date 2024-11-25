@@ -66,6 +66,55 @@
 </div>
 
 <script>
-
+	class Recept{
+		constructor(naam,ingrediënten,bereidingstijd) {
+			this.naam = naam;
+			this.ingrediënten = ingrediënten;
+			this.bereidingstijd = bereidingstijd;
+		}
+		getInfo(){
+			return `De recepten in het receptenboek zijn ${this.naam}, hebben de volgende ${this.ingrediënten} en hebben een bereidingstijd van ${this.bereidingstijd.toFixed(2)}.`;
+		}
+	}
+	class Receptenboek{
+		constructor() {
+			this.recepten = [];
+		}
+		getDetails(recept){
+			this.recepten.push(recept);
+		}
+		voegIngrediëntToe(ingredient){
+			this.recepten.push(ingredient);
+		}
+		verwijderIngrediënt(ingredient){
+			this.recepten.push(ingredient);
+		}
+	}
+	class Nagerecht extends Receptenboek {
+		constructor(naam,ingrediënten,bereidingstijd,zoetheidsniveau) {
+			super(naam,ingrediënten,bereidingstijd);
+			this.zoetheidsniveau = zoetheidsniveau;
+		}
+		getInfo(){
+			return `De recepten in het receptenboek zijn ${this.naam}, hebben de volgende ${this.ingrediënten}, met een zoetgehalte ${this.zoetheidsniveau} en hebben een bereidingstijd van ${this.bereidingstijd.toFixed(2)}.`;
+		}
+	}
+	class Hoofdgerecht extends Receptenboek{
+		constructor(naam,ingrediënten,bereidingstijd,zoetheidsniveau,porties) {
+			super(naam,ingrediënten,bereidingstijd,zoetheidsniveau);
+			this.porties = porties;
+		}
+		getInfo(){
+			return `De recepten in het receptenboek zijn ${this.naam}, hebben de volgende ${this.ingrediënten}, met een zoetgehalte ${this.zoetheidsniveau}, ze bestaan uit ${this.porties} en hebben een bereidingstijd van ${this.bereidingstijd.toFixed(2)}.`;
+		
+			}
+			
+	}
 	
+	
+</script>
+
+<script>
+
+
 </script>
